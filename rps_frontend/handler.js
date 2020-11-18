@@ -4,17 +4,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const rockButton = document.querySelector('#rock');
   rockButton.addEventListener('click', () => {
-    console.log("rock clicked");
+    updatePlayerChoice("rock");
   });
 
   const paperButton = document.querySelector('#paper');
   paperButton.addEventListener('click', () => {
-    console.log("paper clicked");
+    updatePlayerChoice("paper");
   });
 
   const scissorsButton = document.querySelector('#scissors');
   scissorsButton.addEventListener('click', () => {
-    console.log("scissors clicked");
+    updatePlayerChoice("scissors");
   });
+
+  const updatePlayerChoice = (playerChoice) => {
+    const target = document.querySelector('#player-choice');
+    target.innerHTML = playerChoice;
+  }
 
 });
