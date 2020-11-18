@@ -2,20 +2,20 @@ package com.colin.learning.rps_backend.payloads;
 
 public class GameResult {
 
-    private String ComputerGuess;
+    private String computerGuess;
     private Winner winner;
 
     public GameResult(String computerGuess, Winner winner) {
-        ComputerGuess = computerGuess;
+        this.computerGuess = computerGuess;
         this.winner = winner;
     }
 
     public String getComputerGuess() {
-        return ComputerGuess;
+        return computerGuess;
     }
 
     public void setComputerGuess(String computerGuess) {
-        ComputerGuess = computerGuess;
+        this.computerGuess = computerGuess;
     }
 
     public Winner getWinner() {
