@@ -1,5 +1,6 @@
 const {app, BrowserWindow} = require('electron');
 const kill = require('kill-port');
+const {spawn} = require('child_process');
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -13,17 +14,12 @@ const createWindow = () => {
   win.loadFile('index.html');
   
   win.on('closed', () => {
-    console.log("closing down");
-    kill(8080, 'tcp')
-      .then(console.log("killed port 8080"));
-  })
+    kill(8080, 'tcp');
+  });
 }
 
 const jarPath = app.getAppPath() + '/rps_backend-0.0.1-SNAPSHOT.jar';
-console.log("jarPath:", jarPath);
-const child = require('child_process').spawn(
-  'java', ['-jar', jarPath, '']
-  );
+spawn('java', ['-jar', jarPath, '']);
   
 app.whenReady().then(createWindow);
   
