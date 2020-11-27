@@ -4,10 +4,6 @@ public class PlayerSubmission {
 
     private String playerChoice;
 
-    public PlayerSubmission(String playerChoice) {
-        this.playerChoice = playerChoice;
-    }
-
     public PlayerSubmission() {
     }
 
